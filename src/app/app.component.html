@@ -1,0 +1,84 @@
+<div>
+  <h1 class="title">DSA Sheet</h1>
+</div>
+
+<div class="nav-links">
+  <button [ngClass]="{ 'active' : curSheet == 1}" (click)="updateState('curSheet', 1)">Sheet 200</button>
+  <button [ngClass]="{ 'active' : curSheet == 2}" (click)="updateState('curSheet', 2)">Sheet 400</button>
+</div>
+
+<div *ngIf="curSheet == 1">
+  <div *ngFor="let step of sheetData; let i = index" class="step-section">
+    <h2 (click)="updateState('activeStep', i)">Day {{step.step_no}}: {{step.head_step_no}}</h2>
+
+    <table *ngIf="activeStep == i">
+      <thead>
+        <tr>
+          <th>Status</th>
+          <th>Problem</th>
+          <th>Difficulty</th>
+          <th>Practice</th>
+          <th>Resources</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let topic of step.topics; let j = index">
+          <td><input type="checkbox" (change)="updateData()" [(ngModel)]="uploadData[topic.id].isSolved"></td>
+          <td class="title">{{topic.title}}</td>
+          <td>
+            <a [href]="topic.lc_link" target="_blank">LC | </a>
+            <a [href]="topic.gfg_link" *ngIf="topic.gfg_link" target="_blank">GFG | </a>
+            <a [href]="topic.cs_link" target="_blank">CS</a>
+          </td>
+          <td [ngClass]="topic.difficulty === 0 ? 'easy' : (topic.difficulty === 2 ? 'hard' : 'medium')">
+            {{ difficultyMap[topic.difficulty] || 'Medium' }}
+          </td>
+          <td>
+            <a [href]="topic.yt_link" target="_blank">YouTube</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div *ngIf="curSheet == 2">
+  <div *ngFor="let step of sheetData; let i = index" class="step-section">
+    <h2 (click)="updateState('activeStep', i)">Step {{step.step_no}}: {{step.step_title}}</h2>
+
+    <div *ngIf="activeStep == i">
+      <div *ngFor="let substp of step.sub_steps; let j = index" class="sub-step-section">
+        <h2 (click)="updateState('activeSubstep', j)">Lec {{substp.sub_step_no}}: {{substp.sub_step_title}}</h2>
+
+        <table *ngIf="activeSubstep == j">
+          <thead>
+            <tr>
+              <th>Status</th>
+              <th>Problem</th>
+              <th>Practice</th>
+              <th>Difficulty</th>
+              <th>Resources</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let topic of substp.topics; let k = index">
+              <td><input type="checkbox" (change)="updateData()" [(ngModel)]="uploadData[topic.id].isSolved"></td>
+              <td class="title">{{topic.question_title}}</td>
+              <td>
+                <a *ngIf="topic.lc_link" [href]="topic.lc_link" target="_blank">LC | </a>
+                <a *ngIf="topic.gfg_link" [href]="topic.gfg_link" target="_blank">GFG | </a>
+                <a *ngIf="topic.cs_link" [href]="topic.cs_link" target="_blank">CS</a>
+              </td>
+              <td [ngClass]="topic.difficulty === 0 ? 'easy' : (topic.difficulty === 2 ? 'hard' : 'medium')">
+                {{ difficultyMap[topic.difficulty] || 'Medium' }}
+              </td>
+              <td>
+                <a [href]="topic.yt_link" target="_blank">YouTube</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
