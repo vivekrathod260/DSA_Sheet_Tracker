@@ -12,7 +12,7 @@ It’s lightweight, fully client-side, and requires **no authentication or backe
 - 📊 Track solved/unsolved questions in real-time
 - 🔄 Data stored securely in your **own Firebase Realtime Database**
 - 💾 Saves Firebase config locally so you only enter it once
-- 🌐 Fully deployed and accessible online via **Render**
+- 🌐 Fully deployed and accessible online via **Github Pages**
 - ⚡ Built with **Angular** for fast and reactive UI
 
 ---
@@ -32,7 +32,7 @@ It’s lightweight, fully client-side, and requires **no authentication or backe
 |----------------|-----------------|
 | **Frontend**   | Angular |
 | **Database**   | Firebase Realtime Database |
-| **Hosting**    | Render |
+| **Hosting**    | GitHub Pages |
 | **Language**   | TypeScript, HTML, CSS |
 
 ---
