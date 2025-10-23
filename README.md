@@ -12,8 +12,16 @@ It’s lightweight, fully client-side, and requires **no authentication or backe
 - 📊 Track solved/unsolved questions in real-time
 - 🔄 Data stored securely in your **own Firebase Realtime Database**
 - 💾 Saves Firebase config locally so you only enter it once
-- 🌐 Fully deployed and accessible online via **Github Pages**
+- 🌐 Fully deployed and accessible online via **Github Pages : https://vivekrathod260.github.io/DSA_Sheet_Tracker/**
 - ⚡ Built with **Angular** for fast and reactive UI
+
+---
+
+## 📷 Screenshots
+
+<img src="https://github.com/vivekrathod260/DSA_Sheet_Tracker/blob/main/src/assets/DSA_sheet_200.png?raw=true" width="700"/>
+
+<img src="https://github.com/vivekrathod260/DSA_Sheet_Tracker/blob/main/src/assets/DSA_sheet_400.png?raw=true" width="700"/>
 
 ---
 
